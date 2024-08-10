@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Button from "./button";
-import TimeLoader from "../components/loaders/time-loader";
 import Pagination from "./pagination";
 import { TableFilter } from "./table-filter";
 
