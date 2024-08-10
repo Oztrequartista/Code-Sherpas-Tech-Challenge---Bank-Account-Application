@@ -1,0 +1,57 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "bootstrap-icons";
+    src:
+        url("../iconfonts/bootstrap-icons/icons/font/fonts/bootstrap-icons.woff2?08efbba7c53d8c5413793eecb19b20bb")
+            format("woff2"),
+        url("../iconfonts/bootstrap-icons/icons/font/fonts/bootstrap-icons.woff?08efbba7c53d8c5413793eecb19b20bb")
+            format("woff");
+}
+
+@import "../iconfonts/bootstrap-icons/icons/font/bootstrap-icons.css";
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+    width: 100% !important;
+    height: 100% !important;
+    cursor: pointer;
+}
+
+.react-datepicker__input-container input:focus {
+    outline: none !important;
+}
+
+.my-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important; /* Change white to whatever background color you want */
+    -webkit-text-fill-color: #333; /* Change #333 to whatever text color you want */
+}
+
+
+
+
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+
+
+
+
+
