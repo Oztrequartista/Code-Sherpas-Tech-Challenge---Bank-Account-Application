@@ -134,9 +134,9 @@ const Home = () => {
       <section className="flex flex-col lg:flex-row">
         <div className="basis-full lg:basis-[35%]">
           <SideHeader
-            title="Account Settings"
+            title="Overview"
             paragraph={
-              "This is a sample description of the the default limits on transactions"
+              "Overview of your balance, account number, recent transactions, and the ability to manage deposits, withdrawals, and transfers."
             }
           />
         </div>
