@@ -124,7 +124,7 @@ const Home = () => {
         className="mb-15"
         slotRight={
           <Button
-            className="w-full !bg-success text-white text-body_sm1_normal"
+            className="w-full !bg-primary-50 !text-primary-600 text-body_sm1_normal border border-primary-600"
             onClick={() => router.push("/reports")}
           >
             View Statement

@@ -19,7 +19,6 @@ export default function TextNumberInputContent({onCancel, filter, value, onSave,
       <Input
         value={inputValue}
         onChange={({ target: { value } }) => {
-          console.log(value);
           setInputValue(value);
         }}
         onKeyDown={(e) => {

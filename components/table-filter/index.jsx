@@ -92,22 +92,23 @@ export const TableFilter = forwardRef(
                 const value = filter.display.split(":")[1];
 
                 return (
-                  <li key={filter}>
+                  <li
+                    key={filter}
+                    onClick={() => {
+                      setCurrentFilter(filter.filter);
+                    }}
+                  >
                     <Button
                       className="capitalize gap-3 select-all text-primary-600 bg-primary-50"
                       variant="ghost"
                     >
-                      <p
-                        onClick={() => {
-                          setCurrentFilter(filter.filter);
-                        }}
-                        className=" text-text_xs_medium font-medium"
-                      >
+                      <p className=" text-text_xs_medium font-medium">
                         <span className=" text-primary-300">{description}</span>
                         <span>: {value}</span>
                       </p>
                       <button
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation();
                           const f = filters.filter(
                             (f) => f.query !== filter.query
                           );

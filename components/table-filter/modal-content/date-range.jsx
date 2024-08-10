@@ -26,9 +26,9 @@ export default function DateRangeModalContent({
         setStartDate(singleDate);
       }
     } else if (value) {
-      const params = new URLSearchParams(value);
-      const start = params.get('start_date');
-      const end = params.get('end_date');
+      const dates = value.split(',')
+      const [start, end] = dates
+      console.log(start, end);
       if (start) setStartDate(parseISO(start));
       if (end) setEndDate(parseISO(end));
     }
