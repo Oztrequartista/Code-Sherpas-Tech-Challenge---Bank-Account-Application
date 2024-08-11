@@ -24,7 +24,7 @@ const AuthenticatedLayout = ({ children }) => {
           <SlidingMenu isOpen={isMenuOpen} onClose={closeMenu} />
         </div>
       </Portal>
-      <section className="flex w-full h-[100vh] overflow-hidden">
+      <section className="flex w-full md:h-[100vh] overflow-hidden">
         <aside className="h-full">
           <Sidebar />
         </aside>
