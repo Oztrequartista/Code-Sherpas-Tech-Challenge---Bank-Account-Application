@@ -1,12 +1,21 @@
 import React from "react";
+import { useRouter } from "next/router";
 import Seo from "@/shared/seo/seo";
 import PageTitle from "@/features/page-title";
 import PageTabs from "@/features/page-tabs";
 import Table from "@/components/table";
-import { formatDateString, parseQueryString, filterTransactions } from "@/utils";
+import {
+  formatDateString,
+  parseQueryString,
+  filterTransactions,
+} from "@/utils";
 import { useTransaction } from "@/hooks/useTransaction";
+import Button from "@/components/button";
+import Card from "@/components/card";
+import { formatAmountWithCommas } from "@/utils";
 
 const Reports = () => {
+  const router = useRouter();
   const {
     totalRecords,
     currentPage,
@@ -18,6 +27,7 @@ const Reports = () => {
     transactions,
     setFilteredTransactions,
     originalTransactions,
+    balance,
   } = useTransaction();
 
   const columns = [
@@ -72,7 +82,18 @@ const Reports = () => {
 
   return (
     <div>
-      <PageTitle title="Account Statement" className="mb-6" />
+      <PageTitle
+        title="Account Statement"
+        className="mb-6"
+        slotRight={
+          <Button
+            className="w-full !bg-primary-50 !text-primary-600 text-body_sm1_normal border border-primary-600"
+            onClick={() => router.push("/")}
+          >
+            View Account Details
+          </Button>
+        }
+      />
       <Seo title={"Account Statement"} />
       <PageTabs
         tabs={[{ name: "Transactions", href: "#", icon: "" }]}
@@ -80,6 +101,14 @@ const Reports = () => {
         defaultActiveTab={"Transactions"}
         className="mb-6 md:mb-12"
       />
+       <div className="md:flex justify-end">
+       <Card
+              title={"Account Balance"}
+              value={`USD ${formatAmountWithCommas(balance)}`}
+              icon="ri-stack-line"
+              containerClass="md:w-[300px]"
+            />
+       </div>
 
       <div className="px-1 mt-6 md:mt-7">
         <Table
